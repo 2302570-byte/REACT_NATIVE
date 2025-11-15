@@ -1,5 +1,5 @@
 import React from 'react';
-import { RefreshControl, ScrollView, StyleSheet, Text } from 'react-native';
+import {RefreshControl, ScrollView, StyleSheet, Text, View} from 'react-native';
 
 const RefreshControlX = () => {
   const [refreshing, setRefreshing] = React.useState(false);
@@ -12,29 +12,28 @@ const RefreshControlX = () => {
   }, []);
 
   return (
-    <ScrollView
-      contentContainerStyle={styles.scrollView}
-      refreshControl={
-        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-      }
-    >
-      <Text style={styles.text}>
-        Pull down to see RefreshControl indicator
-      </Text>
-    </ScrollView>
+      <View style={styles.container}>
+        <ScrollView
+          contentContainerStyle={styles.scrollView}
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          }>
+          <Text>Pull down to see RefreshControl indicator</Text>
+        </ScrollView>
+      </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginBottom: 10,
+  },
   scrollView: {
-    flexGrow: 1, 
+    flex: 1,
     backgroundColor: 'pink',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 50,
-  },
-  text: {
-    fontSize: 16,
   },
 });
 

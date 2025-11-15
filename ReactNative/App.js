@@ -1,11 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, ScrollView } from 'react-native';
+import { StyleSheet, Text, ScrollView, } from 'react-native';
 import ActivityIndicatorX from './CoreComponents/ActivityIndicatorX';
 import ButtonX from './CoreComponents/ButtonX';
 import FlatListX from './CoreComponents/FlatListX';
 import ModalX from './CoreComponents/ModalX';
 import PressableX from './CoreComponents/PressableX';
 import RefreshControlX from './CoreComponents/RefreshControlX';
+import ScrollViewX from './CoreComponents/ScrollViewX';
+import SectionListX from './CoreComponents/SectionListX';
+import StatusBarX from './CoreComponents/StatusBarX';
+import SwitchX from './CoreComponents/SwitchX';
 
 export default function App() {
   return (
@@ -24,7 +27,14 @@ export default function App() {
 
       <RefreshControlX/>
 
-      <StatusBar style="auto" />
+      <ScrollViewX />
+
+      <SectionListX/>
+
+      <StatusBarX/>
+
+      <SwitchX/>
+      
     </ScrollView>
   );
 }
