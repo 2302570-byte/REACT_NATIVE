@@ -1,21 +1,47 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, ScrollView } from 'react-native';
 import ActivityIndicatorX from './CoreComponents/ActivityIndicatorX';
+import ButtonX from './CoreComponents/ButtonX';
+import FlatListX from './CoreComponents/FlatListX';
+import ModalX from './CoreComponents/ModalX';
+import PressableX from './CoreComponents/PressableX';
+import RefreshControlX from './CoreComponents/RefreshControlX';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <Text style={styles.text}>REACT NATIVE</Text>
+
+      <ActivityIndicatorX/>
+
+      <ButtonX/>
+
+      <FlatListX/>
+
+      <ModalX/>
+
+      <PressableX/>
+
+      <RefreshControlX/>
+
       <StatusBar style="auto" />
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingVertical: 50,
+    paddingHorizontal: 20,
+    justifyContent: 'flex-start',
+    alignItems: 'stretch',
+  },
+
+  text: {
+    textAlign: 'center',
+    marginBottom: 20,
+    fontSize: 24,
+    fontWeight: 'bold',
   },
 });
